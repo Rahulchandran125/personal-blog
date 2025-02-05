@@ -1,0 +1,88 @@
+{% extends "Dashboard.html" %}
+{% load static %}
+{% block contact %}
+<link rel="stylesheet" href="{% static 'css/gellary.css' %}">
+
+<section class="gallery" id="gallery">
+    <div class="gallery__container">
+      <h2 class="section__header">Gallery photos</h2>
+      <p class="section__subheader">
+        Explore the most beautiful places in the world.
+      </p>
+      <div class="gallery__grid">
+        {% for i in gallery%}
+        <div class="gallery__card">
+          <img src="{{ i.image.url }}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>{{i.name}}</h4>
+            <p>{{i.caption}}</p>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="gallery__card">
+          <img src="{% static 'image/gallery-2.jpg' %}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>Krabi</h4>
+            <p>Thailand</p>
+          </div>
+        </div>
+        <div class="gallery__card">
+          <img src="{% static 'image/pexels-julia-m-cameron-4145250.jpg' %}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>Blog</h4>
+            <p>japan</p>
+          </div>
+        </div>
+        <div class="gallery__card">
+          <img src="{% static 'image/gallery-4.jpg' %}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>Tokyo</h4>
+            <p>Japan</p>
+          </div>
+        </div>
+        <div class="gallery__card">
+          <img src="{% static 'image/gallery-5.jpg' %}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>Taj Mahal</h4>
+            <p>India</p>
+          </div>
+        </div>
+        <div class="gallery__card">
+          <img src="{% static 'image/journals-3.jpg' %}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>Taj Mahal</h4>
+            <p>India</p>
+          </div>
+        </div>
+        <div class="gallery__card">
+          <img src="{% static 'image/gallery-3.jpg' %}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>Bali</h4>
+            <p>Indonesia</p>
+          </div>
+        </div>
+        <div class="gallery__card">
+          <img src="{% static 'image/journals-2.jpg' %}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>journals</h4>
+            <p>world</p>
+          </div>
+        </div>
+        <div class="gallery__card">
+          <img src="{% static 'image/journals-3.jpg' %}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>Travel</h4>
+            <p>India</p>
+          </div>
+        </div>
+        <div class="gallery__card">
+          <img src="{% static 'image/journals-1.jpg' %}" alt="gallery" />
+          <div class="gallery__content">
+            <h4>Classic Pose</h4>
+            <p>uk</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

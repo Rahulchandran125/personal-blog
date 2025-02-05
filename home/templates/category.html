@@ -1,0 +1,29 @@
+{% extends "Dashboard.html" %}
+{% load static %}
+{% block contact %}
+<link rel="stylesheet" href="{% static 'css/category.css' %}">
+<main>
+ <div class="containers">
+  {%for i in ab %}
+    <div class="card">
+      <div class="card-header">
+        <img src="{{i.imag.url}}" alt="" />
+      </div>
+      <div class="card-body">
+        <span class="tag tag-pink">{{i.cate}}</span>
+        <h4>{{i.title}}</h4>
+        <p>{{i.content}}</p>
+        <div class="user">
+          <img src="{{user.profile.image.url}}" alt="" />
+          <div class="user-info">
+            <h5>{{i.us}}</h5>
+            <small>{{i.created_at }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %} 
+    
+  </div>
+</main>
+{% endblock %} 

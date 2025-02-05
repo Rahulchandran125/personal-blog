@@ -1,0 +1,46 @@
+{% load static %}
+{% load widget_tweaks %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+	<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <style>
+        body{
+            background: url('https://images.unsplash.com/photo-1505699261378-c372af38134c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+        }
+      </style>
+</head>
+<body>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+      <div class="max-w-md mx-auto p-6 bg-card rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-foreground mb-4">Edit Profile</h2>
+        
+        <div class="flex flex-col items-center mb-4">
+          <div class="flex items-center justify-center bg-input text-primary-foreground border border-border rounded-md p-2">
+            <img src="{{user.profile.image.url}}" alt="upload-image" class="w-32 h-32 bg-muted rounded-full flex items-center justify-center text-muted-foreground" />
+          </div>
+          <p id="image-upload-helper" class="text-black text-muted-foreground mt-2">Max file size: 5MB</p>
+          {% render_field pform.image type="file" class="mt-1 mb-2 text-secondary text-primary-foreground border border-border rounded-md p-2" %}
+        </div>
+        <label class="text-muted" for="username">Username</label>
+        {% render_field uform.username type="text" id="username" placeholder="Enter your username" class="mt-1 p-2 border border-border rounded-md w-full mb-4" %}
+      
+        <label class="text-muted" for="email">Email</label>
+        {% render_field uform.email  type="email" id="email" placeholder="Enter your email" class="mt-1 p-2 border border-border rounded-md w-full mb-4" %}
+      
+      
+        <label class="text-muted-foreground mb-1" for="bio">Bio</label>
+        {% render_field pform.bio id="bio" placeholder="Tell us about yourself" class="border border-muted rounded p-2 mb-4 w-full h-24"%}
+      
+        <button class="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white p-2 rounded-lg hover:opacity-90 ">Submit</button>
+      </div>
+  </form>
+
+</body>
+</html>
+

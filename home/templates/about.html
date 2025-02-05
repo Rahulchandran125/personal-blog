@@ -1,0 +1,285 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"rel="stylesheet"/>
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+    <title>about page</title>
+<!--
+Reflux Template
+https://templatemo.com/tm-531-reflux
+-->
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+  
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    
+  </head>
+
+  <body>
+    <div id="page-wraper">
+      <!-- Sidebar Menu -->
+      <div class="responsive-nav">
+        <i class="fa fa-bars" id="menu-toggle"></i>
+        <div id="menu" class="menu">
+          <i class="fa fa-times" id="menu-close"></i>
+          <div class="container">
+            <div class="image">
+              <a href="#"><img src="{{user.profile.image.url}}" alt="" /></a>
+            </div>
+            <div class="author-content">
+              <h4>{{user}}</h4>
+            </div>
+            <nav class="main-nav" role="navigation">
+              <ul class="main-menu">
+                <li><a href="#section1">About Me</a></li>
+                <li><a href="#section3">Contact Me</a></li>
+                <li><a href="/blog">Home</a></li>
+                <li><a href="/Dashboard">Dashboard</a></li>
+              </ul>
+            </nav>
+            <div class="social-network">
+              <ul class="soial-icons">
+                <li>
+                  <a href="https://www.facebook.com/login/"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://x.com/?lang=en&mx=2"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/feed/"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-dribbble"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-rss"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="copyright-text">
+              <p>Copyright © 2025 Web Design Mastery. All rights reserved. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section about-me" id="section1">
+        <div class="container">
+          <div class="section-heading">
+            <h2>About Me</h2>
+            <div class="line-dec"></div>
+            <span
+              >We hope you enjoy reading our articles as much as we enjoy writing them! If you have any questions, feedback, or suggestions, feel free to reach out to us via our contact page. Thank you for being part of our journey!</span
+            >
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="{% static 'image/jason-goodman-Oalh2MojUuk-unsplash.jpg' %}" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4>Welcome to .Blog!</h4>
+                  <p>
+                    At blog, we’re passionate about sharing knowledge, stories, and insights that help you lead a more informed, creative, and inspired life. Whether you’re looking for tips on personal development, lifestyle advice, or just want to read something thought-provoking, we’ve got something for you
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4>Our Mission</h4>
+                  <p>
+                    Our mission is simple: to create content that not only informs but also inspires and entertains. We believe that everyone has a story to tell, and every piece of knowledge has the power to make a difference. We want our blog to be a space where readers feel heard, understood, and inspired to take action in their own lives.
+                  </p>
+                
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="{% static 'image/maxim-hopman-8vn4KvfU640-unsplash1.jpg' %}" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section my-services" data-section="section2">
+        <div class="container">
+          <div class="section-heading">
+            <h2>What We Write About?</h2>
+            <div class="line-dec"></div>
+            <span
+              >Here at .Blog, we cover a wide range of topics to cater to diverse interests. Our main areas of focus include:.</span
+            >
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="first-service-icon service-icon"></div>
+                <h4>Lifestyle & Wellness</h4>
+                <p>
+                  Advice on maintaining a healthy and balanced lifestyle.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="second-service-icon service-icon"></div>
+                <h4>Creativity & Inspiration</h4>
+                <p>
+                  Articles that spark creativity and encourage you to think outside the box.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="third-service-icon service-icon"></div>
+                <h4>Tech & Innovation</h4>
+                <p>
+                  Insights into the latest technological trends and innovations.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="fourth-service-icon service-icon"></div>
+                <h4>Travel & Adventure</h4>
+                <p>
+                  Guides and personal stories about exploring the world.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="section contact-me" id="section3">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Contact Me</h2>
+            <div class="line-dec"></div>
+            <span>Let us know what you need and we will get back to you in no time..</span >
+          </div>
+          <div class="row">
+            <div class="right-content">
+              <div class="container">
+                <form id="contact" action="" method="post">
+                  <div class="row">
+                    <div class="col-md-6">
+                        <fieldset>
+                          <input name="name"  type="text" class="form-control"   id="name"placeholder="Your name..." required=""/>
+                        </fieldset> 
+                    </div>     
+                    <div class="col-md-6"></div>     
+                      <fieldset>      
+                        <input  name="email"  type="text"   class="form-control"  id="email" placeholder="Your email..."required=""/>  
+                        </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                        <fieldset> 
+                          <input name="subject"   type="text"  class="form-control" id="subject"placeholder="Subject..." required="" />
+                            
+                         </fieldset>
+                    </div>    
+                           
+                     <div class="col-md-12">
+                        <fieldset>        
+                          <textarea name="message"rows="6"  class="form-control"    id="message"  placeholder="Your message..."required="" ></textarea>
+                         
+                          </fieldset>
+                      </div>
+                          
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="button">
+                          Send Message
+                        </button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+        //according to loftblog tut
+        $(".main-menu li:first").addClass("active");
+  
+        var showSection = function showSection(section, isAnimate) {
+          var direction = section.replace(/#/, ""),
+            reqSection = $(".section").filter(
+              '[data-section="' + direction + '"]'
+            ),
+            reqSectionPos = reqSection.offset().top - 0;
+  
+          if (isAnimate) {
+            $("body, html").animate(
+              {
+                scrollTop: reqSectionPos
+              },
+              800
+            );
+          } else {
+            $("body, html").scrollTop(reqSectionPos);
+          }
+        };
+  
+        var checkSection = function checkSection() {
+          $(".section").each(function() {
+            var $this = $(this),
+              topEdge = $this.offset().top - 80,
+              bottomEdge = topEdge + $this.height(),
+              wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var currentId = $this.data("section"),
+                reqLink = $("a").filter("[href*=\\#" + currentId + "]");
+              reqLink
+                .closest("li")
+                .addClass("active")
+                .siblings()
+                .removeClass("active");
+            }
+          });
+        };
+  
+        $(".main-menu").on("click", "a", function(e) {
+          e.preventDefault();
+          showSection($(this).attr("href"), true);
+        });
+  
+        $(window).scroll(function() {
+          checkSection();
+        });
+      </script>

@@ -1,0 +1,38 @@
+{% load static %}
+{% load widget_tweaks %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+	<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <style>
+        body{
+            background: url('https://images.unsplash.com/photo-1505699261378-c372af38134c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+        }
+      </style>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+    <div class="bg-background text-primary-foreground min-h-screen flex flex-col items-center justify-center">
+  <div class="max-w-md w-full bg-card shadow-lg rounded-lg overflow-hidden">
+    <div class="bg-primary text-primary-foreground p-4  ">
+      <h1 class="text-lg font-semibold">Add Profile</h1>
+    </div>
+      <div class="max-w-md w-full bg-card shadow-lg rounded-lg overflow-hidden mt-4">
+    <div class="p-4">
+      <div class="flex items-center justify-center bg-input text-primary-foreground border border-border rounded-md p-2">
+        <img src="https://icon-library.com/images/blank-person-icon/blank-person-icon-9.jpg" alt="upload-image" class="w-32 h-32 bg-muted rounded-full flex items-center justify-center text-muted-foreground" />
+      </div>
+      <label for="image" class="block text-sm font-medium mt-4">Choose Image</label>
+      <p id="image-upload-helper" class="text-black text-muted-foreground mt-2">Max file size: 5MB</p>
+      {% render_field image.image type="file" class="mt-1 mb-2 text-secondary text-primary-foreground border border-border rounded-md p-2" %}
+
+     <input type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white p-2 rounded-lg hover:opacity-90"></button>
+    </div>
+
+  </div>
+</form>
+</div>
+  </body>
+</html>

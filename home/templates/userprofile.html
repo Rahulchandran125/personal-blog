@@ -1,0 +1,342 @@
+{% extends "Dashboard.html" %}
+
+{% load static %}
+{% block contact %}
+{% block style %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #eff5ff;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .profile-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      margin-top: 6rem;
+      background-image: url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+
+    .profile-header {
+      background-image: url('https://images.unsplash.com/photo-1620121478247-ec786b9be2fa?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .profile-image {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      flex-shrink: 0;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-info {
+      flex-grow: 1;
+    }
+
+    .profile-name {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #f9f9f9;
+    }
+
+    .profile-title {
+      font-size: 18px;
+      color: #f9f7f7;
+      margin-bottom: 16px;
+    }
+
+    .profile-stats {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #f4f0f0;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: #f3eeee;
+    }
+
+    .profile-bio {
+      color: #f3eded;
+      font-size: 16px;
+      max-width: 600px;
+    }
+
+    .profile-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .content-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+      }
+
+      .profile-image {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto;
+      }
+
+      .profile-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .profile-bio {
+        margin: 0 auto;
+      }
+
+      .content-card {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-container {
+        padding: 12px;
+      }
+
+      .profile-header {
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .profile-name {
+        font-size: 24px;
+      }
+
+      .profile-title {
+        font-size: 16px;
+      }
+
+      .stat-value {
+        font-size: 20px;
+      }
+
+      .profile-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .edit-button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.1);
+      text-transform: uppercase;
+    }
+    
+    .edit-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+      border-radius: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .edit-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.2);
+    }
+    
+    .edit-button:hover::before {
+      opacity: 1;
+    }
+    
+    .edit-button:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.1);
+    }
+    
+    .edit-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.4), 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+    }
+    
+    .edit-button:focus:not(:focus-visible) {
+      box-shadow: none;
+    }
+    
+    .edit-button span {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+{% endblock %}
+</head>
+<body>
+  <div class="profile-container">
+    {% for i in messages %}
+    <div class="alert alert-success text-centerr  w-50 p-3 d-flex " role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+      <div>
+      {{i}}
+      </div>
+    </div>
+    {% endfor %}
+    <header class="profile-header">
+      <div class="profile-image">
+        <a href="/addprofile"><img src="{{u.profile.image.url}}"alt="Profile picture"></a>              
+      </div>
+      <div class="profile-info">
+        <h1 class="profile-name">{{u}}</h1>
+      
+        <div class="profile-stats">
+          <div class="stat">
+            <div class="stat-value">{{count}}</div>
+            <div class="stat-label">Posts</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">8.5K</div>
+            <div class="stat-label">Followers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">4.7K</div>
+            <div class="stat-label">Following</div>
+          </div>
+         
+        </div>
+       
+        <p class="profile-bio">{{u.profile.bio}}</p><br>
+      </div>
+    </header>
+    <main class="profile-content">
+      {% for i in post %}
+      <article class="content-card">
+        <div class="card-image">
+          <img src="{{i.imag.url}}" alt="Project preview">    
+        </div>
+        <div class="card-content">
+          <h2 class="card-title">{{i.title}}</h2>
+          <p class="card-description">
+            {{i.content}}
+          </p>
+          <div class="card-meta">
+            <span>{{i.updated_at}}</span>
+            <span>4.9k views</span>
+          </div>
+        </div>
+      </article>
+      {% endfor%}
+
+     
+    
+    </main>
+    
+  </div>
+
+</body>
+</html>
+{% endblock %} 

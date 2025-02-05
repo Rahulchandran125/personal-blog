@@ -1,0 +1,313 @@
+{% extends "Dashboard.html" %}
+
+{% load static %}
+{% block contact %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+   
+
+    .search-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-image: url('https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .search-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .search-title {
+      font-size: 2.5rem;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+    }
+
+    .search-description {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    .search-form {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 20px 60px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+      font-size: 1.2rem;
+    }
+
+    .filter-tags {
+      display: flex;
+      gap: 12px;
+      margin: 24px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+     
+    }
+
+    .filter-tag {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: white;
+      color: #666;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid #eee;
+   
+    }
+
+    .filter-tag:hover,
+    .filter-tag.active {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    .results-info {
+      text-align: center;
+      color: #0a0a0a;
+      margin: 32px 0;
+      font-size: 0.95rem;
+    }
+
+    .blog-grid {
+      display: flex;
+      grid-template-columns: repeat( minmax(300px, 1fr));
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 32px;
+     
+      justify-content: space-evenly;
+    }
+
+    .blog-card {
+      width: 325px;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0px 2px 4px rgb(0,0 ,0, 0.2);
+      margin: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .blog-image {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 24px;
+    }
+
+    .blog-category {
+      font-size: 0.85rem;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .blog-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .blog-excerpt {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    .blog-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .author-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .search-container {
+        padding: 20px;
+      }
+
+      .search-title {
+        font-size: 2rem;
+      }
+
+      .search-input {
+        padding: 16px 48px;
+        font-size: 1rem;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .search-title {
+        font-size: 1.75rem;
+      }
+
+      .search-description {
+        font-size: 1rem;
+      }
+
+      .filter-tags {
+        gap: 8px;
+      }
+
+      .filter-tag {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+       
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="search-container">
+    <header class="search-header">
+      <h1 class="search-title">Discover Amazin Blo Posts</h1>
+      <form method="get" action="/search" class="search-form">
+        <span class="search-icon">🔍</span>
+        <input name="ab" type="text"   class="search-input"  placeholder="Your post begins with a search..."  aria-label="Search">
+      </form>
+ 
+      <div class="filter-tags">
+        <button class="filter-tag active">All</button>
+        {% for i in cat %}
+        <a href="/category/{{i.id}}"><button class="filter-tag">{{i.name}}</button></a>
+       
+        {%endfor %}
+      </div>
+
+     <h5 class="results-info">Showing {{count}} results </h5>
+    </header>
+    <main class="blog-grid">
+      {% for i in search %}
+      <article class="blog-card">
+        <div class="blog-image">
+          <img src="{{i.imag.url}}" 
+               alt="Blog post thumbnail">
+        </div>
+        <div class="blog-content">
+          <div class="blog-category">{{i.cate}}</div>
+          <h2 class="blog-title">{{i.title}}</h2>
+          <p class="blog-excerpt">{{i.content}}
+          </p>
+          <div class="blog-meta">
+            <div class="blog-author">
+              <div class="author-avatar">
+                <img src="{{i.us.profile.image.url}}" alt="Author avatar"> 
+                    
+              </div>
+              <span>{{i.us}}</span>
+            </div>
+            <span>{{i.created_at }}</span>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </main>
+  </div>
+  <!-- <section>
+      {% for i in search %}
+      <div class="card-container">
+        <div class="card">
+          <img src="{{i.imag.url}}" alt="">
+          <div class="card-content">
+            <h3>{{i.title}}</h3>
+            <p>{{i.content}}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </section> -->
+</body>
+</html>
+      
+
+
+{% endblock %} 
+
