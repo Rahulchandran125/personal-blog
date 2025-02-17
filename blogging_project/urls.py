@@ -49,6 +49,7 @@ urlpatterns = [
     path('editprofile/', views.editprofilefun),
     path('search/', views.searchfun),
     path('privacy/', views.privacyfun),
+   
     path('userprofile/<int:u_id>', views.userprofilefun),
 
 

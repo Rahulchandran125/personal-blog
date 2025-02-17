@@ -22,11 +22,11 @@
       <div class="max-w-md w-full bg-card shadow-lg rounded-lg overflow-hidden mt-4">
     <div class="p-4">
       <div class="flex items-center justify-center bg-input text-primary-foreground border border-border rounded-md p-2">
-        <img src="https://icon-library.com/images/blank-person-icon/blank-person-icon-9.jpg" alt="upload-image" class="w-32 h-32 bg-muted rounded-full flex items-center justify-center text-muted-foreground" />
+        <img src="https://icon-library.com/images/blank-person-icon/blank-person-icon-9.jpg" alt="upload-image"id="profile-pic" class="w-32 h-32 bg-muted rounded-full flex items-center justify-center text-muted-foreground" />
       </div>
       <label for="image" class="block text-sm font-medium mt-4">Choose Image</label>
       <p id="image-upload-helper" class="text-black text-muted-foreground mt-2">Max file size: 5MB</p>
-      {% render_field image.image type="file" class="mt-1 mb-2 text-secondary text-primary-foreground border border-border rounded-md p-2" %}
+      {% render_field image.image type="file" id="imageupload" class="mt-1 mb-2 text-secondary text-primary-foreground border border-border rounded-md p-2" %}
 
      <input type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white p-2 rounded-lg hover:opacity-90"></button>
     </div>
@@ -34,5 +34,13 @@
   </div>
 </form>
 </div>
-  </body>
+<script>
+  const profilePic = document.getElementById("profile-pic");
+  const inputFile = document.getElementById("imageupload");
+
+  inputFile.onchange = function(){
+    profilePic.src = URL.createObjectURL(inputFile.files[0]);
+  }
+</script>
+</body>
 </html>

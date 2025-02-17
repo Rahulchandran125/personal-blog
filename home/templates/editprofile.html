@@ -22,10 +22,10 @@
         
         <div class="flex flex-col items-center mb-4">
           <div class="flex items-center justify-center bg-input text-primary-foreground border border-border rounded-md p-2">
-            <img src="{{user.profile.image.url}}" alt="upload-image" class="w-32 h-32 bg-muted rounded-full flex items-center justify-center text-muted-foreground" />
+            <img src="{{user.profile.image.url}}" alt="upload-image" id="profile-pic" class="w-32 h-32 bg-muted rounded-full flex items-center justify-center text-muted-foreground" />
           </div>
           <p id="image-upload-helper" class="text-black text-muted-foreground mt-2">Max file size: 5MB</p>
-          {% render_field pform.image type="file" class="mt-1 mb-2 text-secondary text-primary-foreground border border-border rounded-md p-2" %}
+          {% render_field pform.image type="file" id="imageupload" class="mt-1 mb-2 text-secondary text-primary-foreground border border-border rounded-md p-2" %}
         </div>
         <label class="text-muted" for="username">Username</label>
         {% render_field uform.username type="text" id="username" placeholder="Enter your username" class="mt-1 p-2 border border-border rounded-md w-full mb-4" %}
@@ -40,7 +40,14 @@
         <button class="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white p-2 rounded-lg hover:opacity-90 ">Submit</button>
       </div>
   </form>
-
+  <script>
+    const profilePic = document.getElementById("profile-pic");
+    const inputFile = document.getElementById("imageupload");
+  
+    inputFile.onchange = function(){
+      profilePic.src = URL.createObjectURL(inputFile.files[0]);
+    }
+  </script>
 </body>
 </html>
 

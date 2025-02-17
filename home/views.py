@@ -335,3 +335,4 @@ def like_post(request):
                 like.save()
 
     return redirect(reverse('home:post-list'))
+

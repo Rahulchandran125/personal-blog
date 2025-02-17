@@ -230,8 +230,8 @@ html {
   max-width: 80vw !important;
   min-width: 45px !important;
   outline: none;
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
+  overflow-x: hidden !important; 
+   overflow-y: auto !important; 
   padding: 0;
   position: fixed !important;
   top: calc(0px);  

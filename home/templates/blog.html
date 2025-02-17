@@ -68,7 +68,7 @@
                     
                     {% if user.is_authenticated %}  
                     <a href="/logout">Logout</a>
-                    <a href="/profile"><img  class="profile-img"  src="{{user.profile.image.url}}" alt=""></a>
+                    <a href="/addprofile"><img  class="profile-img"  src="{{user.profile.image.url}}" alt=""></a>
                     <a class="no" href="#">{{user}}</a> 
                     {% else %}  
                     <a href="/login">login</a>

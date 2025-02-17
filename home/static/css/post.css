@@ -181,6 +181,7 @@ body{
     /* overflow: hidden; */
     color: var(--color-gray-1);
     background: #40525c !important;
+    overflow-x: hidden;
 
 
 
@@ -230,193 +231,6 @@ nav .phone-button{
     color: orange;
 }
 
-/* button */
- /* From Uiverse.io by vinodjangid07 */ 
-/* From Uiverse.io by andrew-demchenk0 */ 
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 12px;
-  gap: 2px;
-  height: 30px;
-  width: 70px;
-  border: none;
-  background: #a549da3d;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.lable {
-  line-height: 18px;
-  font-size: 13px;
-  color: #A649DA;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-
-.button:hover {
-  background: #a549da62;
-}
-
-.button:hover .svg-icon {
-  animation: lr 1s linear infinite;
-}
-
-@keyframes lr {
-  0% {
-    transform: translateX(0);
-  }
-
-  25% {
-    transform: translateX(-1px);
-  }
-
-  75% {
-    transform: translateX(1px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-/* delete */
-/* From Uiverse.io by Tsiangana */ 
-/* From Uiverse.io by vinodjangid07 */ 
-.bin-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgb(255, 95, 95);
-  cursor: pointer;
-  border: 2px solid rgb(255, 201, 201);
-  transition-duration: 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.bin-bottom {
-  width: 15px;
-  z-index: 2;
-}
-.bin-top {
-  width: 17px;
-  transform-origin: right;
-  transition-duration: 0.3s;
-  z-index: 2;
-}
-.bin-button:hover .bin-top {
-  transform: rotate(45deg);
-}
-.bin-button:hover {
-  background-color: rgb(255, 0, 0);
-}
-.bin-button:active {
-  transform: scale(0.9);
-}
-.garbage {
-  position: absolute;
-  width: 14px;
-  height: auto;
-  z-index: 1;
-  opacity: 0;
-  transition: all 0.3s;
-}
-.bin-button:hover .garbage {
-  animation: throw 0.4s linear;
-}
-@keyframes throw {
-  from {
-    transform: translate(-400%, -700%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0%, 0%);
-    opacity: 1;
-  }
-}
-
-/* end */ */
-
-.deshboard aside a h5{
-    color: var(--color-white);
-}
-.deshboard-container main h2{
-    color: var(--color-white);
-    margin: 0 0 2rem 0;
-    line-height: 1;
-}
-
-.deshboard-container table{
-    color:  #4b5563;
-}
-.deshboard{
-    margin-top: 5rem;
-    padding-top: 20px;
-    background-image: url('');
-    
-}
-.deshboard-container{
-    display: grid;
-    grid-template-columns:20rem auto ;
-    gap: 1rem;
-    /* background:#40525C; */
-    background: url('https://images.unsplash.com/photo-1513077202514-c511b41bd4c7?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-   
-    padding: 2rem;
-    margin-bottom: 5rem;
-
-}
-.deshboard aside a {
-    background-color:#40525c;
-   
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    padding: 1.6rem;
-    color: #cbcfd3;
-    text-decoration: none;
-    border-bottom: 1px solid var(--color-gray-1);
-}
-.deshboard aside ul li:last-child a{
-    border-bottom: none
-}
-.deshboard aside a:hover{
-    background:#9096a6;
-}
-.deshboard aside a.active{
-    background-color:var(--color-gray-900);
-}
-
-.deshboard main{
-    margin-left: 1.5rem;
-}
-.deshboard main table{
-    width: 100%;
-    text-align: left;
-}
-.deshboard main table tr th{
-    background:#40525c;
-    padding: 0.8rem;
-    color: rgb(249, 244, 244);
-}
-.deshboard main table td{
-    padding: 0.8rem;
-    border-bottom:1px solid  white;
-
-}
-.deshboard main table tbody tr:hover td{
-    background: var(--color-bg);
-    color: rgb(227, 54, 54) ;
-    cursor: default;
-    transition: var(--transition);
-
-}
 
 
 /* footer section starts here  */
@@ -561,9 +375,8 @@ nav .phone-button{
         grid-template-columns: 4.5rem auto;
         padding: 0;
         background: transparent;
-        background: url('https://images.unsplash.com/photo-1513077202514-c511b41bd4c7?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-
-        gap: 0;
+       background-color: white;
+        gap: 1rem;
     }
 
     .deshboard aside h5{

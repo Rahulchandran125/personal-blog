@@ -63,14 +63,9 @@ body {
 body {
   font-family: "Poppins", sans-serif;
   color: var(--white);
+  overflow-x: hidden;
  
 }
-
-
-
-
-
-
 
 
 .header__container {
